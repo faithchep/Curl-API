@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data elements</title>
+</head>
+<body>
+<ul>
+    <li>Data Elements form DHIS2</li>
+</ul>
+<table>
+<tbody>
+    {% for data in res %}
+        <tr>
+         <td>{{ data}}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</body>
+</html>
