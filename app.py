@@ -1,6 +1,7 @@
 from flask import Flask
-from flask import  render_template
+from flask import render_template
 import requests
+from json2html import json2html
 from requests.structures import CaseInsensitiveDict
 
 app = Flask(__name__)
@@ -21,6 +22,7 @@ def data():
     return resp.json()
     return render_template("index.html", resp=resp)
 
+
 @app.route('/forms')
 def forms():
     url = "https://hiskenya.org/api/dataEntryForms/"
@@ -32,9 +34,9 @@ def forms():
 
     res = requests.get(url, headers=headers)
 
-    print(res.json())
+    print(json2html.convert(json=res))
     return res.json()
-    return render_template("home.html", resp=resp)
+
 
 
 if __name__ == '__main__':

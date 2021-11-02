@@ -9,10 +9,17 @@
     <li>Data Elements form DHIS2</li>
 </ul>
 <table>
+<thead>
+<tr>
+    <th>displayName:</th>
+    <th>id:</th>
+</tr>
+</thead>
 <tbody>
     {% for data in res %}
         <tr>
-         <td>{{ data}}</td>
+         <td>{{ data[0] }}</td>
+         <td>{{ data[1] }}</td>
         </tr>
     {% endfor %}
 </tbody>
